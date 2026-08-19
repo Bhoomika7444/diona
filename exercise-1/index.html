@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medical &amp; Travel Expense Request - WCB Manitoba</title>
   <link rel="stylesheet" href="style.css">
+  <!-- html2pdf.js for direct PDF file export & download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -21,7 +23,7 @@
       <button type="button" id="btnDataMoreItems" class="btn-ctrl btn-dataset" title="Load 10+ records in prescription drugs and rich multi-table records">More Items Dataset</button>
       <button type="button" id="btnDataMinimal" class="btn-ctrl btn-dataset" title="Load minimal / empty table dataset">Minimal Dataset</button>
       <button type="button" id="btnEditJson" class="btn-ctrl" title="Edit live raw JSON" onclick="openJsonEditor()">Edit JSON</button>
-      <button type="button" id="btnPrintPdf" class="btn-ctrl btn-print" title="Print or Save as PDF via native browser dialog" onclick="triggerPrint()">Print / Save PDF</button>
+      <button type="button" id="btnSavePdf" class="btn-ctrl btn-print" title="Directly generate and download PDF file" onclick="downloadPdfFile()">Save PDF</button>
     </div>
   </header>
 

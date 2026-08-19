@@ -462,6 +462,44 @@ function applyCustomJson() {
   }
 }
 
+async function downloadPdfFile() {
+  const btn = document.getElementById("btnSavePdf") || document.getElementById("btnPrintPdf");
+  const origText = btn ? btn.textContent : "Save PDF";
+  if (btn) {
+    btn.textContent = "Generating PDF...";
+    btn.disabled = true;
+  }
+
+  try {
+    const element = document.getElementById("documentViewport");
+    if (typeof html2pdf !== "undefined" && element) {
+      const claimStr = currentData && currentData.claimNo ? currentData.claimNo.replace(/[^a-zA-Z0-9]/g, "") : "Document";
+      const filename = `Medical_Travel_Expense_Request_${claimStr}.pdf`;
+
+      const opt = {
+        margin: [8, 8, 8, 8],
+        filename: filename,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true, scrollY: 0 },
+        jsPDF: { unit: "mm", format: "letter", orientation: "portrait" },
+        pagebreak: { mode: ["css", "legacy"], after: ".document-page" }
+      };
+
+      await html2pdf().set(opt).from(element).save();
+    } else {
+      triggerPrint();
+    }
+  } catch (err) {
+    console.warn("Direct PDF export error:", err);
+    triggerPrint();
+  } finally {
+    if (btn) {
+      btn.textContent = origText;
+      btn.disabled = false;
+    }
+  }
+}
+
 function triggerPrint() {
   try {
     window.focus();
@@ -503,6 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnApply = document.getElementById("btnApplyJson");
   if (btnApply) btnApply.addEventListener("click", applyCustomJson);
 
-  const btnPrint = document.getElementById("btnPrintPdf");
-  if (btnPrint) btnPrint.addEventListener("click", triggerPrint);
+  const btnSave = document.getElementById("btnSavePdf") || document.getElementById("btnPrintPdf");
+  if (btnSave) btnSave.addEventListener("click", downloadPdfFile);
 });
+
