@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 95" width="380" height="95">
+  <g fill="#005a9c">
+    <!-- WCB Acronym -->
+    <text x="2" y="56" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="52" letter-spacing="-1.5" fill="#005a9c">WCB</text>
+    
+    <!-- 3 Figures / People Emblem -->
+    <!-- Left Person -->
+    <circle cx="165" cy="35" r="8.5" fill="#005a9c"/>
+    <path d="M152 70 C152 53, 160 48, 165 48 C170 48, 178 53, 178 70 Z" fill="#005a9c"/>
+    
+    <!-- Center Person (Prominent) -->
+    <circle cx="195" cy="19" r="11" fill="#0077c8"/>
+    <path d="M178 70 C178 46, 188 38, 195 38 C202 38, 212 46, 212 70 Z" fill="#0077c8"/>
+    
+    <!-- Right Person -->
+    <circle cx="225" cy="35" r="8.5" fill="#005a9c"/>
+    <path d="M212 70 C212 53, 220 48, 225 48 C230 48, 238 53, 238 70 Z" fill="#005a9c"/>
+  </g>
+  
+  <!-- Subtitle Text: Workers Compensation Board of Manitoba -->
+  <text x="2" y="74" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14.5" fill="#005a9c" letter-spacing="-0.2">Workers Compensation</text>
+  <text x="2" y="89" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14.5" fill="#005a9c" letter-spacing="-0.2">Board of Manitoba</text>
+</svg>

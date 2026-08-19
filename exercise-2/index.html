@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worker Progress Report - WCB Manitoba</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- html2pdf.js for direct PDF file export & download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Exercise 2 Dedicated Controls Toolbar (Non-Printing) -->
+  <header class="demo-toolbar" id="demoToolbar">
+    <div class="demo-title-group">
+      <span class="demo-badge">Exercise 2</span>
+      <span class="demo-title">Worker Progress Report</span>
+    </div>
+
+    <div class="demo-controls">
+      <span class="demo-label">Dataset:</span>
+      <button type="button" id="btnDataSource" class="btn-ctrl btn-dataset active" title="Load exact WCB PDF sample dataset">Source PDF Dataset</button>
+      <button type="button" id="btnDataAlternative" class="btn-ctrl btn-dataset" title="Load active recovery & rich conditional dataset">Alternative Dataset</button>
+      <button type="button" id="btnDataMinimal" class="btn-ctrl btn-dataset" title="Load minimal / no missed time dataset">Minimal Dataset</button>
+      <button type="button" id="btnEditJson" class="btn-ctrl" title="Edit live raw JSON" onclick="openJsonEditor()">Edit JSON</button>
+      <button type="button" id="btnSavePdf" class="btn-ctrl btn-print" title="Directly generate and download PDF file" onclick="downloadPdfFile()">Save as PDF</button>
+    </div>
+  </header>
+
+  <!-- Dynamic Document Viewport (3 pages rendered dynamically from JavaScript data) -->
+  <main class="document-viewport" id="documentViewport">
+    <!-- Rendered dynamically by script.js -->
+  </main>
+
+  <!-- Live JSON Data Editor Modal -->
+  <div class="modal-overlay" id="jsonEditorModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Live JSON Data Editor &mdash; Exercise 2</h3>
+        <button type="button" class="btn-ctrl" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="jsonEditorArea" class="json-textarea" spellcheck="false"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-ctrl" id="btnCancelJson" onclick="closeJsonEditor()">Cancel</button>
+        <button type="button" class="btn-ctrl btn-dataset active" id="btnApplyJson">Apply Changes to Document</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standalone Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

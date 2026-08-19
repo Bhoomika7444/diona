@@ -1,0 +1,458 @@
+/* ==========================================================================
+   Exercise 1: Medical & Travel Expense Request - WCB Manitoba
+   Pure CSS - Document recreation & Print layout
+   ========================================================================== */
+
+:root {
+  --primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif-font: Georgia, "Times New Roman", Times, serif;
+  --text-color: #111111;
+  --border-color: #000000;
+  --link-blue: #005a9c;
+  --bg-page: #ffffff;
+  --bg-canvas: #e8ecf1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  background-color: var(--bg-canvas);
+  line-height: 1.35;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   Top Demo & Presentation Control Toolbar
+   ========================================== */
+.demo-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 12px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: var(--primary-font);
+}
+
+.demo-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-badge {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.demo-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.demo-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.demo-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.btn-ctrl {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #475569;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-ctrl:hover {
+  background: #475569;
+  border-color: #64748b;
+}
+
+.btn-ctrl.active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ==========================================
+   Document Container & Pages
+   ========================================== */
+.document-viewport {
+  padding: 32px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.document-page {
+  background: var(--bg-page);
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.55in 0.65in 0.65in 0.65in;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.page-body {
+  flex: 1;
+}
+
+/* ==========================================
+   Header Section
+   ========================================== */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.wcb-logo {
+  width: 175px;
+  height: auto;
+  display: block;
+}
+
+.wcb-address {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: #222;
+}
+
+.wcb-address a {
+  color: #222;
+  text-decoration: none;
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.doc-main-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000000;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.claim-box {
+  border: 1.5px solid #000000;
+  padding: 5px 12px;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  background: #ffffff;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   Introductory line
+   ========================================== */
+.intro-text {
+  font-size: 13.5px;
+  margin-bottom: 18px;
+  color: #111;
+  font-weight: 400;
+}
+
+.worker-name-span {
+  font-weight: 600;
+}
+
+/* ==========================================
+   Form Tables & Sections
+   ========================================== */
+.form-section {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
+  letter-spacing: -0.1px;
+}
+
+.section-notice {
+  font-size: 12px;
+  color: #222;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.section-subtext {
+  font-size: 11.5px;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.wcb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  line-height: 1.3;
+  border: 1.5px solid #000000;
+  margin-bottom: 4px;
+}
+
+.wcb-table th,
+.wcb-table td {
+  border: 1px solid #000000;
+  padding: 5px 7px;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.wcb-table th {
+  font-weight: 600;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.wcb-table td {
+  color: #111111;
+}
+
+.empty-cell {
+  color: #888;
+  font-style: italic;
+}
+
+/* Privacy & Certification Notice */
+.privacy-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #000000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 1px;
+  background: #ffffff;
+}
+
+.custom-checkbox.checked::after {
+  content: "✔";
+  color: #000000;
+  font-size: 12px;
+}
+
+.privacy-link {
+  color: var(--link-blue);
+  text-decoration: underline;
+}
+
+/* ==========================================
+   Footer Section
+   ========================================== */
+.doc-footer {
+  margin-top: 24px;
+  padding-top: 8px;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.footer-bottom-row {
+  text-align: right;
+  font-size: 11.5px;
+  color: #111111;
+}
+
+/* ==========================================
+   Custom JSON Editor Modal / Drawer
+   ========================================== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.modal-body {
+  padding: 16px 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.json-textarea {
+  width: 100%;
+  height: 380px;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 12px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #0f172a;
+  resize: vertical;
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==========================================
+   Print Optimization
+   ========================================== */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0.35in 0.45in;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .demo-toolbar,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .document-viewport {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .document-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .document-page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+}

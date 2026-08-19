@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90">
+  <g fill="#005a9c">
+    <!-- WCB Letters -->
+    <text x="2" y="60" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="52" letter-spacing="-1.5" fill="#005a9c">WCB</text>
+    
+    <!-- 3 People Icon -->
+    <!-- Left Person -->
+    <circle cx="165" cy="38" r="8.5" fill="#005a9c"/>
+    <path d="M152 74 C152 57, 160 51, 165 51 C170 51, 178 57, 178 74 Z" fill="#005a9c"/>
+    
+    <!-- Center Person (Taller, brighter blue/accent) -->
+    <circle cx="195" cy="22" r="11" fill="#0077c8"/>
+    <path d="M178 74 C178 50, 188 42, 195 42 C202 42, 212 50, 212 74 Z" fill="#0077c8"/>
+    
+    <!-- Right Person -->
+    <circle cx="225" cy="38" r="8.5" fill="#005a9c"/>
+    <path d="M212 74 C212 57, 220 51, 225 51 C230 51, 238 57, 238 74 Z" fill="#005a9c"/>
+  </g>
+  
+  <!-- Subtitle Text -->
+  <text x="2" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="14.5" fill="#005a9c" letter-spacing="-0.2">Workers Compensation</text>
+  <text x="2" y="91" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="14.5" fill="#005a9c" letter-spacing="-0.2">Board of Manitoba</text>
+</svg>

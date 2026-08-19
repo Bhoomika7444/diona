@@ -1,0 +1,470 @@
+/**
+ * Shared Styles for WCB Manitoba Document Generation (Diona Technical Assignment)
+ */
+
+/* ==========================================
+   1. BASE RESET & TYPOGRAPHY
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   2. DEMO CONTROLS TOOLBAR (Screen Only)
+   ========================================== */
+.demo-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+}
+
+.demo-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-badge {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.demo-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.demo-nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.demo-nav-link:hover {
+  color: #ffffff;
+  border-color: #64748b;
+}
+
+.demo-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.demo-label {
+  font-weight: 500;
+  color: #94a3b8;
+  margin-right: 4px;
+}
+
+.btn-ctrl {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-ctrl:hover {
+  background: #334155;
+  color: #ffffff;
+  border-color: #475569;
+}
+
+.btn-ctrl.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  font-weight: 600;
+}
+
+.btn-ctrl.btn-print {
+  background: #15803d;
+  border-color: #16a34a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-ctrl.btn-print:hover {
+  background: #166534;
+}
+
+/* ==========================================
+   3. DOCUMENT VIEWPORT & PAGE CONTAINER
+   ========================================== */
+.document-viewport {
+  padding: 30px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.document-page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.55in 0.65in 0.55in 0.65in;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.page-body {
+  flex: 1;
+}
+
+/* ==========================================
+   4. SHARED DOCUMENT HEADER
+   ========================================== */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #005a9c;
+  padding-bottom: 12px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wcb-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.wcb-address {
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1.35;
+  color: #334155;
+}
+
+.wcb-address a {
+  color: #005a9c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.doc-main-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #005a9c;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.claim-box {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.claim-wp-box {
+  display: inline-flex;
+  border: 1px solid #334155;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.claim-wp-box .claim-part {
+  background: #ffffff;
+  padding: 3px 8px;
+  color: #0f172a;
+  border-right: 1px solid #334155;
+}
+
+.claim-wp-box .wp-part {
+  background: #334155;
+  color: #ffffff;
+  padding: 3px 8px;
+}
+
+/* ==========================================
+   5. SHARED DOCUMENT FOOTER
+   ========================================== */
+.doc-footer {
+  margin-top: 20px;
+  padding-top: 8px;
+  border-top: 1px solid #cbd5e1;
+  font-size: 10px;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-bottom-row {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* ==========================================
+   6. TABLES & DATA FORMATTING
+   ========================================== */
+.wcb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  font-size: 10.5px;
+}
+
+.wcb-table th {
+  background-color: #005a9c;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding: 5px 8px;
+  border: 1px solid #005a9c;
+  vertical-align: middle;
+}
+
+.wcb-table td {
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.wcb-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.empty-table-cell {
+  text-align: center !important;
+  color: #64748b !important;
+  font-style: italic !important;
+  padding: 12px 8px !important;
+  background: #f8fafc;
+}
+
+/* ==========================================
+   7. CUSTOM CHECKBOX & FORM CONTROLS
+   ========================================== */
+.custom-checkbox {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid #1e293b;
+  border-radius: 2px;
+  position: relative;
+  vertical-align: middle;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.custom-checkbox.checked::after {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  top: 1px;
+  width: 4px;
+  height: 7px;
+  border: solid #0f172a;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ==========================================
+   8. JSON MODAL EDITOR
+   ========================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 720px;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.modal-body {
+  padding: 16px 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.json-textarea {
+  width: 100%;
+  height: 380px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 12px;
+  resize: vertical;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.json-textarea:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==========================================
+   9. PRINT STYLES (@media print)
+   ========================================== */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+
+  body {
+    background: transparent !important;
+    color: #000000 !important;
+    font-size: 10pt;
+  }
+
+  .demo-toolbar,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .document-viewport {
+    padding: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+  }
+
+  .document-page {
+    width: 100% !important;
+    min-height: 10.8in !important;
+    height: auto !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0.5in 0.6in !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .document-page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .wcb-table th {
+    background-color: #005a9c !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .claim-box,
+  .claim-wp-box .wp-part {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
