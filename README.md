@@ -121,5 +121,5 @@ DIONA-TECHNOLOGIES/
 └── README.md
 
 
-
-video link Exercise2 : https://drive.google.com/file/d/1pFwD29rGo-_XNCg3eudHC1P4Ay3pp5Fb/view?usp=sharing
+Video link Exercise1: https://drive.google.com/file/d/1vIhQZSa_gVEQaFhAKbNfloE3BkxYtQVh/view?usp=sharing
+Video link Exercise2 : https://drive.google.com/file/d/1pFwD29rGo-_XNCg3eudHC1P4Ay3pp5Fb/view?usp=sharing
